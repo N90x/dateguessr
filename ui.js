@@ -24,6 +24,8 @@ function getNewEvent() {
         fetchedData.events.splice(i, 1)
         currentScreen = "getReady"
         currentPoints = { p1: 0, p2: 0 }
+        p1ConfirmedGuess = undefined
+        p2ConfirmedGuess = undefined
     }
 
 
@@ -134,8 +136,7 @@ function processGuesses() {
             p1: Math.abs(answer - p1ConfirmedGuess),
             p2: Math.abs(answer - p2ConfirmedGuess),
         }
-        p1ConfirmedGuess = undefined
-        p2ConfirmedGuess = undefined
+
         console.log(`Answer: ${answer}\n${currentPoints}`)
 
         revealEnd = millis() + 7000
