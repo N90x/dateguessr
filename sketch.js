@@ -18,7 +18,7 @@ let colours = {
 async function getEvents(month, day) {
   let url = `https://byabbe.se/on-this-day/${month}/${day}/events.json`
   fetchedData = await httpGet(url)
-  console.log(fetchedData)
+  //console.log(fetchedData)
 
   let i = getRandomInt(fetchedData.events.length - 1)
   selectedEvent = fetchedData.events[i]
@@ -29,7 +29,7 @@ async function getEvents(month, day) {
 let font;
 let fontName = "ScienceGothic-Light"
 async function initFont() {
-  font = await loadFont(`/assets/fonts/Science Gothic/${fontName}.ttf`);
+  font = await loadFont(`${fontName}.ttf`);
   textFont(font);
 }
 
